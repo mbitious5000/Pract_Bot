@@ -55,7 +55,8 @@ async def on_shutdown(bot: Bot):
     logging.info("❌ Webhook удален.")
 
 
-async def main():
+# ВАЖНО: main() теперь НЕ async!
+def main():
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
 
@@ -70,4 +71,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
